@@ -36,7 +36,7 @@ button.addEventListener("submit", function(event) {
  let discountcodes = document.getElementById("discount").value;
   prezzo = discount(prezzo, discountcodes);
   document.getElementById("prezzo").textContent = "Il prezzo è " + prezzo.toFixed(2) + " €";
-});
+
 
   function validateForm() {
     let typeofwork = document.getElementById("type-of-work").value;
@@ -51,26 +51,28 @@ button.addEventListener("submit", function(event) {
     } else {
       return 0;
     }
+  }
+    function discount(prezzo, codici){
+
+      for(i=0; i < discountcodes.lenght; i++){
+        let discount = document.getElementById("discount").value;
+        if(discountcodes[i] == discount){
+            return prezzo =  prezzo - 0.25(prezzo) ;
+        }
+        else{
+        console.log("Codice non valido");
+        }
     return prezzo;
+    }
+    
   }
   
+});
 
 
 
 
-function discount(prezzo, codici){
 
-  for(i=0; i < discountcodes.lenght; i++){
-    let discount = document.getElementById("discount").value;
-    if(discountcodes[i] == discount){
-        return prezzo =  prezzo - 0.25(prezzo) ;
-    }
-    else{
-    console.log("Codice non valido");
-    }
-return prezzo;
-}
-}
 
 
 
