@@ -25,60 +25,44 @@ Quando l’utente clicca sul pulsante “Send”, se il codice promozionale inse
  facciamo diventare quest’ultimo di colore rosso.
 Se il codice inserito è valido, dopo aver calcolato il prezzo scontato, 
 eliminare quel codice dall’elenco dei codici sconto disponibili, in modo che non sia più utilizzabile. */
+let button = document.getElementById("button");
+let discountcodes = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 
- 
-
-button.addEventListener("submit", function(event) {
+button.addEventListener("click", function(event) {
   event.preventDefault();
- 
-  let button = document.getElementById("button")
-  let discountcodes = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
-  prezzo = validateForm();
- 
   
+  let prezzo = validateForm();
   prezzo = discount(prezzo, discountcodes);
   document.getElementById("prezzo").innerHTML = "Il prezzo è " + prezzo.toFixed(2) + " €";
-
 
   function validateForm() {
     let typeofwork = document.getElementById("type-of-work").value;
     let hours = parseInt(document.getElementById("hours").value);
-  
+
     if (typeofwork == 1) {
-      return prezzo = 20.5 * hours;
+      return 20.5 * hours;
     } else if (typeofwork == 2) {
-      return prezzo = 15.3 * hours;
+      return 15.3 * hours;
     } else {
-      return prezzo = 33.6 * hours;}
-    
-    return prezzo;
+      return 33.6 * hours;
+    }
   }
 
-  
-  
-    function discount(prezzo, codici){
+  function discount(prezzo, codici) {
+    let discount = document.getElementById("discount").value;
 
-      for(i=0; i < discountcodes.lenght; i++){
-        let discount = document.getElementById("discount").value;
-        if(discountcodes.includes(discount)){
-            return prezzo =  prezzo - 0.25(prezzo) ;
-            discountcodes.splice(i);
-        }
-        else{
-        console.log("Codice non valido");
-        }
-    break;
+    for (let i = 0; i < discountcodes.length; i++) {
+      if (discountcodes[i] === discount) {
+        prezzo = prezzo - (0.25 * prezzo);
+        discountcodes.splice(i, 1);
+        return prezzo;
+      }
     }
+      console.log("Codice non valido");
+    
+      return prezzo;
+    
     
   }
   
 });
-
-
-
-
-
-
-
-
-

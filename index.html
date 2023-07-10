@@ -112,7 +112,7 @@
       <section id="offer" class="bg-info">
         <div class="container p-4">
           <h2 class="text-center text-uppercase">Want an offer?</h2>
-          <form id="offerForm" class="row gy-2 my-3" onsubmit="calculateOffer(event)">
+          <form id="offerForm" class="row gy-2 my-3">
             <!-- First name input-->
             <div class="col-sm-6 col-12">
                 <label class="form-label" for="first-name">First name</label>
@@ -145,7 +145,7 @@
             </div>
             <!-- Discount Code-->
             <div class="col-sm-6 col-12">
-              <label class="form-label" for="phone">Discount Code</label>
+              <label class="form-label" for="discount" >Discount Code</label>
               <input class="form-control" id="discount" type="text"/>      
             </div>
             <!-- Message input-->
@@ -154,7 +154,7 @@
                 <textarea rows="5" class="form-control" id="message" placeholder="Specify your work commission..." required></textarea>
             </div>
             <div class="col-12 text-center mt-4">
-              <button class="btn btn-warning btn-lg" id="button" >Send</button>
+              <button class="btn btn-warning btn-lg" id="button" type="submit" >Send</button>
             </div>
 
             <div class="col-12">
@@ -188,7 +188,7 @@
   </footer>
   <!-- fine footer -->
 
-  <script  src="js/main.js"></script>
+  <script src="js/main.js"></script>
      
   
   </body>
