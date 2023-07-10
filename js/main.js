@@ -25,15 +25,17 @@ Quando l’utente clicca sul pulsante “Send”, se il codice promozionale inse
  facciamo diventare quest’ultimo di colore rosso.
 Se il codice inserito è valido, dopo aver calcolato il prezzo scontato, 
 eliminare quel codice dall’elenco dei codici sconto disponibili, in modo che non sia più utilizzabile. */
-prezzo = validateForm();
- let button = document.getElementById("button")
 
-let discountcodes = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
-
+ 
 
 button.addEventListener("submit", function(event) {
   event.preventDefault();
- let discountcodes = document.getElementById("discount").value;
+ 
+  let button = document.getElementById("button")
+  let discountcodes = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
+  prezzo = validateForm();
+ 
+  
   prezzo = discount(prezzo, discountcodes);
   document.getElementById("prezzo").textContent = "Il prezzo è " + prezzo.toFixed(2) + " €";
 
@@ -52,11 +54,14 @@ button.addEventListener("submit", function(event) {
       return 0;
     }
   }
+
+  
+  
     function discount(prezzo, codici){
 
       for(i=0; i < discountcodes.lenght; i++){
         let discount = document.getElementById("discount").value;
-        if(discountcodes[i] == discount){
+        if(discountcodes.includes(discount)){
             return prezzo =  prezzo - 0.25(prezzo) ;
         }
         else{
