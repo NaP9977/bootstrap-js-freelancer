@@ -37,7 +37,7 @@ button.addEventListener("submit", function(event) {
  
   
   prezzo = discount(prezzo, discountcodes);
-  document.getElementById("prezzo").textContent = "Il prezzo è " + prezzo.toFixed(2) + " €";
+  document.getElementById("prezzo").innerHTML = "Il prezzo è " + prezzo.toFixed(2) + " €";
 
 
   function validateForm() {
@@ -62,6 +62,7 @@ button.addEventListener("submit", function(event) {
         let discount = document.getElementById("discount").value;
         if(discountcodes.includes(discount)){
             return prezzo =  prezzo - 0.25(prezzo) ;
+            discountcodes.splice(i);
         }
         else{
         console.log("Codice non valido");
