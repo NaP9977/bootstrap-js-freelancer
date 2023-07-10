@@ -56,13 +56,17 @@ button.addEventListener("click", function(event) {
         prezzo = prezzo - (0.25 * prezzo);
         discountcodes.splice(i, 1);
         return prezzo;
+      } else{
+        return alert(" Codice sconto non valido");
+        
       }
     }
-      console.log("Codice non valido");
+     
+    
     
       return prezzo;
     
     
   }
-  
+  document.getElementById("offerForm").reset();
 });
