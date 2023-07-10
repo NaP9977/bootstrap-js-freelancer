@@ -34,7 +34,7 @@ let discountcodes = ["YHDNU32","JANJC63", "PWKCN25", "SJDPO96", "POCIE24"]
 button.addEventListener("click", function(event) {
   event.preventDefault();
  let discountcodes = document.getElementById("discount-code").value;
-  prezzo = discount(price, discountCode);
+  prezzo = discount(prezzo, discountcodes);
   document.getElementById("prezzo").textContent = "Il prezzo è " + prezzo.toFixed(2) + " €";
 });
 
