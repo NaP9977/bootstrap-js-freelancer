@@ -45,14 +45,13 @@ button.addEventListener("submit", function(event) {
     let hours = parseInt(document.getElementById("hours").value);
   
     if (typeofwork == 1) {
-      return 20.5 * hours;
+      return prezzo = 20.5 * hours;
     } else if (typeofwork == 2) {
-      return 15.3 * hours;
-    } else if (typeofwork == 3) {
-      return 33.6 * hours;
+      return prezzo = 15.3 * hours;
     } else {
-      return 0;
-    }
+      return prezzo = 33.6 * hours;}
+    
+    return prezzo;
   }
 
   
@@ -67,7 +66,7 @@ button.addEventListener("submit", function(event) {
         else{
         console.log("Codice non valido");
         }
-    return prezzo;
+    break;
     }
     
   }
